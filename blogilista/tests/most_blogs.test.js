@@ -92,7 +92,7 @@ describe('most blogs', () => {
         expect(result).toStrictEqual(
             {
             author: "Robert C. Martin", 
-            likes: 4
+            blogs: 4
             })
     })
 

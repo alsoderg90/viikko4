@@ -34,17 +34,38 @@ const mostBlogs = (blogs) => {
         const temp = result.map(name => name = name.author)
 
         if (!temp.includes(authors[i])) {
-        result.push({ author: authors[i], likes: 1 })
+        result.push({ author: authors[i], blogs: 1 })
         }
         else {
             const index = temp.findIndex(name => name == authors[i])
-            result[index] = {author: result[index].author, likes: result[index].likes+1}
+            result[index] = {author: result[index].author, blogs: result[index].blogs+1}
         }
     }
 
     console.log(authors, result)
     return  result.reduce((prev,curr) => {
-       return (prev.likes > curr.likes) ? prev : curr
+       return (prev.blogs > curr.blogs) ? prev : curr
+    })
+}
+
+const mostLikes = (blogs) => {
+    const results = []
+
+    for (i=0; i<blogs.length; i++) {
+        const temp = results.map(name => name = name.author)
+
+        if (!temp.includes(blogs[i].author)) {
+        results.push(blogs[i])
+        }
+        else {
+            const index = temp.findIndex(name => name == blogs[i].author)
+            results[index] = {author: results[index].author, likes: results[index].likes + blogs[i].likes}
+        }
+    }
+    
+    console.log(results)
+    return results.reduce((prev,curr) => {
+        return (prev.likes > curr.likes) ? prev : curr
     })
 }
 
@@ -52,5 +73,6 @@ module.exports = {
     dummy,
     totalLikes,
     favoriteBlog,
-    mostBlogs
+    mostBlogs,
+    mostLikes
 }
