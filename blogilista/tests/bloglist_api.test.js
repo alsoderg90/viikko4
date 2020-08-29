@@ -19,6 +19,8 @@ const initialBlogs = [
   }
 ]
 
+
+
 beforeEach(async () => {
   await Blog.deleteMany({})
 
@@ -30,6 +32,22 @@ beforeEach(async () => {
 })
 
 const api = supertest(app)
+
+test('empty title/url', async () => {
+  const newBlog = {
+    author: 'test',
+    lifes:3
+  }
+
+  await api
+  .post('/api/blogs')
+  .send(newBlog)
+  .expect(400)
+  .expect('Content-Type', /application\/json/)
+
+  const response = await api.get('/api/blogs')
+ 
+})
 
 test('like test', async () => {
   const newBlog = {
