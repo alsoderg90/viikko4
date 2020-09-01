@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+mongoose.set('useCreateIndex', true);
 
 const blogSchema = mongoose.Schema({
     title: { type : String, required: true },
