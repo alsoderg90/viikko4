@@ -1,9 +1,9 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGaciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsbHUiLCJpZCI6IjVmNGU3ZDFmOTg1YjM3M2Q1YzllYmJkZCIsImlhdCI6MTU5ODk5MzY0OH0.F8YfwnXvp4rxqDKYmV0c0UnnYap35WaNf2q1Zw_fGJA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsbHUiLCJpZCI6IjVmNGU3ZDFmOTg1YjM3M2Q1YzllYmJkZCIsImlhdCI6MTU5OTAwNDAyMH0.z0NvwkEK_YpR45AdOEboy3ADtTd_mmFmtqrLkCdcTZQ
 
 {
-    "title": "Toimiikohan 2",
+    "title": "Toimiikohan 2.20",
     "author": "Edsger W. Dijkstra", 
     "url": "www.fdfsk.coml",
     "likes": 5
