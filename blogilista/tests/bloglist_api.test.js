@@ -19,8 +19,6 @@ const initialBlogs = [
   }
 ]
 
-
-
 beforeEach(async () => {
   await Blog.deleteMany({})
 
@@ -46,7 +44,6 @@ test('empty title/url', async () => {
   .expect('Content-Type', /application\/json/)
 
   const response = await api.get('/api/blogs')
- 
 })
 
 test('like test', async () => {
