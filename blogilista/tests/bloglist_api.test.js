@@ -34,7 +34,7 @@ const api = supertest(app)
 test('empty title/url', async () => {
   const newBlog = {
     author: 'test',
-    lifes:3
+    likes:3
   }
 
   await api

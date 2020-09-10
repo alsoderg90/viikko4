@@ -17,4 +17,5 @@ const blogSchema = mongoose.Schema({
     }
   })
   
-  module.exports = mongoose.model('Blog', blogSchema)
+  const User = mongoose.model('Blog', blogSchema)
+  module.exports = User
