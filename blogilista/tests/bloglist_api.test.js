@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
@@ -31,6 +32,7 @@ beforeEach(async () => {
 
 const api = supertest(app)
 
+/*
 test('empty title/url', async () => {
   const newBlog = {
     author: 'test',
@@ -83,7 +85,7 @@ test('post method succeeded', async () => {
 
   expect(response.body).toHaveLength(initialBlogs.length+1)
   expect(titles).toContain('test')
-})
+}) */
 
 test('id field is neither _id nor object', async () => {
     const response = await api.get('/api/blogs')
