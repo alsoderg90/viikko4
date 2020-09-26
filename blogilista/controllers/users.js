@@ -24,9 +24,22 @@ usersRouter.post('/', async (request, response, next) => {
     response.json(savedUser.toJSON())
   } catch (exception) {
     next(exception)
-
   }
+})
 
+usersRouter.get('/:id', async (request, response) => {
+  try {
+    const user = await User.findById(request.params.id)
+    if (user) {
+      response.json(user.toJSON())
+    }
+    else {
+      response.status(404).end()
+    }
+  }
+  catch(exception) {
+    console.log(exception)
+  }
 })
 
 usersRouter.get('/', async (request, response) => {
